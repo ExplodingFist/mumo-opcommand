@@ -1,9 +1,9 @@
 mumo-opcommand
 ==============
 
-MuMo module - Temporarily add user or remove user to/from a group via command line. 
+MuMo module - Temporarily add user or remove user to/from a group via GUI command line. 
 
-The purpose of this module is to build a command line interface into the mumble client where users in configurable groups (like admin) could grant a user temporary access to any group in a specific channel, or the root channel of the server.
+The purpose of this module is to build a GUI command line interface into the mumble client where users in configurable groups (like admin) could grant a user temporary access to any group in a specific channel, or the root channel of the server. The concept is simular to that of issuing commands on IRC.
 
 Features:
 - Can allow any number of groups the ability to run each command
