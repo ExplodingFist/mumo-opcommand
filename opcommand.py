@@ -105,14 +105,16 @@ class opcommand(MumoModule):
         log = self.log()
         words = re.split(ur"[\u200b\s]+", message.text, flags=re.UNICODE)
         match = 0
+        reference = 0;
         try:
             reference = getattr(opcommand, "%s" % words[0])
             match = 1
         except:
             match = 0
-        # Load referenced configuration data
-        op = getattr(self.cfg(), '%s' % reference)
+        
         if match:
+            # Load referenced configuration data
+            op = getattr(self.cfg(), '%s' % reference)
             giveOps = ''
             try:
                 if words[1]:
@@ -150,6 +152,7 @@ class opcommand(MumoModule):
                     groupList = server.getACL(chan)
                     grp = {}
                     hasAccess = 0
+                    groupExists = 0
                     for group in groupList[1]:
                         # Check if target group exists on target channel
                         if (group.name == op.group):
