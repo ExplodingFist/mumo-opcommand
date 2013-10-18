@@ -103,7 +103,7 @@ class opcommand(MumoModule):
     def userTextMessage(self, server, user, message, current=None):
         manager = self.manager()
         log = self.log()
-        words = re.split(ur"[\u200b\s]+", message.text, flags=re.UNICODE)
+        words = re.split('\s+', message.text)
         match = 0
         reference = 0;
         try:
